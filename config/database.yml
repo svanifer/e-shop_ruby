@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: localhost
+  port: 5432
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: needlework_development
+  pool: 5
+  username: postgres
+  password: 123
+  host: localhost
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: needlework_test
+  pool: 5
+  username: postgres
+  password: 123
+  host: localhost
+
